@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Order {
+  item: String!
+  number: Int!
+}
+
+type UserInfo {
+  username: String!
+  password: String
+  firstname: String!
+  lastname: String!
+  phonenumber: String!
+  orderHistory: [Order!]!
+}
+
+type Query {
+  userslist: [UserInfo!]!
+}
+
+type Mutation {
+  register(userData: UserInput!): String!
+  login(username: String!, password: String!): UserInfo!
+}
+
+input UserInput {
+  username: String!
+
+  """required for login and register"""
+  password: String!
+  firstname: String!
+  lastname: String!
+  phonenumber: String!
+}
